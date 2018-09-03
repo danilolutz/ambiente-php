@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    ports:
+      - 80:80 # Troque a porta caso seja necessário
+    volumes:
+      - .:/var/www/html
+    links:
+      - bancodedados
+  bancodedados:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: seu_banco_de_dados
+      MYSQL_USER: seu_usuario
+      MYSQL_PASSWORD: sua_senha
+      MYSQL_ROOT_PASSWORD: sua_senha_de_root
+  phpqa:
+    image: jakzal/phpqa:php7.1-alpine
