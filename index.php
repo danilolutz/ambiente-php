@@ -1,10 +1,11 @@
 <?php
+namespace MeuSistema;
 
-class minha_Classe
+class MinhaClasse
 {
-    public static function imprimir_info()
+    public static function imprimirInfo()
     {
         echo phpinfo();
     }
 }
-minha_Classe::imprimir_info();
+MinhaClasse::imprimirInfo();
