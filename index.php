@@ -1,7 +1,9 @@
 <?php
 
-class minha_Classe {
-    public static function imprimir_info() {
+class minha_Classe
+{
+    public static function imprimir_info()
+    {
         echo phpinfo();
     }
 }
