@@ -21,3 +21,10 @@ services:
       MYSQL_ROOT_PASSWORD: sua_senha_de_root
   phpqa:
     image: jakzal/phpqa:php7.1-alpine
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+     - "8080:80"
+    links:
+     - "bancodedados:db"
+
